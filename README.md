@@ -13,7 +13,6 @@ Simple snake game made with [raylib](https://www.raylib.com/)
 3.Compile: `cmake ..`
 
 ## Fast start in Linux
-
 1. cd `src`
 
 2.touch `build.sh` 
