@@ -20,8 +20,8 @@ Simple snake game made with [raylib](https://www.raylib.com/)
 
 3.`chmod 700 build.sh`
 
-4.Edit build.sh `set -e
-g++ -o main  snake.cpp board.cpp main.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
-./main`
+4.Edit build.sh `set -e`
+`g++ -o main  snake.cpp board.cpp main.cpp -lraylib -lGL -lm -lpthread -ldl -lrt -lX11`
+`./main`
 
 5.Run `./build.sh`
