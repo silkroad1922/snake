@@ -5,9 +5,9 @@
 #include "snake.h"
 #include <raylib.h>
 #include <cstddef>
-#include <unistd.h>
 #include <memory>
 #include <chrono>
+#include <io.h>
 
 
 
@@ -28,9 +28,11 @@ public:
     Vector2 food;
     std::unique_ptr<Snake> snake;
     KeyboardKey event;
-    std::chrono::_V2::system_clock::time_point start;
-    std::chrono::_V2::system_clock::time_point finish;
-    std::chrono::duration<double> delta;
+    float dt;
+    //std::chrono::system_clock::time_point start;
+   // std::chrono::system_clock::time_point finish;
+    
+   // std::chrono::duration<double> delta;
 
 };
 

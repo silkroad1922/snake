@@ -1,6 +1,6 @@
 #include "board.h"
 
- Board::Board():snake(std::make_unique<Snake>()),food({GetRandomValue(0,FIELD_WIDTH-1),GetRandomValue(0,FIELD_HEIGHT-1)}) {}
+ Board::Board():snake(std::make_unique<Snake>()),food({float(GetRandomValue(0,FIELD_WIDTH-1)),float(GetRandomValue(0,FIELD_HEIGHT-1))}) {}
 void Board::setFood()
 {
     food.x = GetRandomValue(0,FIELD_WIDTH-1);
@@ -35,14 +35,15 @@ void Board::checkFood()
 
 void Board::update()
 {
-    finish = std::chrono::system_clock::now();
-    delta += finish - start;
-    start = std::chrono::system_clock::now(); 
+    dt += GetFrameTime() * 1.2;
+
+
 
     handlerEvent();   
 
-    if(delta.count()>0.1)
+    if(dt>0.2)
     {
+        dt = 0;
         if(!snake->alive())gameOver = true;
         checkFood();
         switch (event)
@@ -53,7 +54,6 @@ void Board::update()
             case KEY_DOWN:snake->setDir(Snake::Diretion::DOWN);break;
         }
         snake->update();
-        delta = std::chrono::nanoseconds::zero();
     }
 
 }
