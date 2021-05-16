@@ -29,11 +29,6 @@ public:
     std::unique_ptr<Snake> snake;
     KeyboardKey event;
     float dt;
-    //std::chrono::system_clock::time_point start;
-   // std::chrono::system_clock::time_point finish;
-    
-   // std::chrono::duration<double> delta;
-
 };
 
 #endif
